@@ -8,7 +8,7 @@
 		$fa_name = $array["$en_name"];
 		$num = strlen($question) * strlen($en_name);
 		$num = $num % 16;
-		$myFile = "messages.txt";
+		$myFile = "people.txt";
         $lines = file($myFile);
         $msg = $lines[$num];
    }
