@@ -6,8 +6,9 @@
         $question =$_POST['question'];
 		$en_name = $_POST['person'];    
 		$fa_name = $array["$en_name"];
-		$num = strlen($question) * strlen($en_name);
-		$num = $num % 16;
+		$hash = hash('crc32',$question."".$en_name);
+		$hash = hexdec($hash);
+		$num = $hash % 16;
 		$myFile = "messages.txt";
         $lines = file($myFile);
         $msg = $lines[$num];
